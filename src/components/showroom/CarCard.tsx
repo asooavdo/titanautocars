@@ -40,7 +40,7 @@ const CarCard = ({ car, onViewDetails, index }: CarCardProps) => {
 
   return (
     <div 
-      className="group relative bg-card border border-border rounded-xl overflow-hidden hover:border-titan-gold/50 transition-all duration-500 animate-fade-up"
+      className="group relative bg-card border border-border rounded-xl overflow-hidden hover:border-titan-red/50 transition-all duration-500 animate-fade-up"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Image Container */}
@@ -57,7 +57,7 @@ const CarCard = ({ car, onViewDetails, index }: CarCardProps) => {
         <button
           onClick={handle360View}
           disabled={isRotating}
-          className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm p-2 rounded-full hover:bg-titan-gold hover:text-titan-dark transition-all duration-300 group/btn"
+          className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm p-2 rounded-full hover:bg-titan-red hover:text-white transition-all duration-300 group/btn"
         >
           <RotateCcw 
             size={20} 
@@ -67,7 +67,7 @@ const CarCard = ({ car, onViewDetails, index }: CarCardProps) => {
 
         {/* Badges */}
         <div className="absolute top-4 left-4 flex flex-col gap-2">
-          <Badge className="bg-titan-gold text-titan-dark font-semibold">
+          <Badge className="bg-titan-red text-white font-semibold">
             {car.year}
           </Badge>
           <Badge variant="outline" className="bg-background/80 backdrop-blur-sm border-foreground/20">
@@ -83,7 +83,7 @@ const CarCard = ({ car, onViewDetails, index }: CarCardProps) => {
               onClick={() => setCurrentImageIndex(idx)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 idx === currentImageIndex 
-                  ? 'bg-titan-gold w-6' 
+                  ? 'bg-titan-red w-6' 
                   : 'bg-foreground/30 hover:bg-foreground/50'
               }`}
             />
@@ -95,10 +95,10 @@ const CarCard = ({ car, onViewDetails, index }: CarCardProps) => {
       <div className="p-6 space-y-4">
         {/* Title & Brand */}
         <div>
-          <p className="text-xs text-titan-gold font-medium uppercase tracking-wider mb-1">
+          <p className="text-xs text-titan-red font-medium uppercase tracking-wider mb-1">
             {car.brand}
           </p>
-          <h3 className="font-display text-xl font-bold group-hover:text-titan-gold transition-colors">
+          <h3 className="font-display text-xl font-bold group-hover:text-titan-red transition-colors">
             {car.name}
           </h3>
         </div>
@@ -106,15 +106,15 @@ const CarCard = ({ car, onViewDetails, index }: CarCardProps) => {
         {/* Quick Specs */}
         <div className="grid grid-cols-3 gap-4 py-4 border-y border-border">
           <div className="text-center">
-            <Gauge size={18} className="mx-auto mb-1 text-titan-gold" />
+            <Gauge size={18} className="mx-auto mb-1 text-titan-red" />
             <p className="text-xs text-muted-foreground">{car.horsepower} HP</p>
           </div>
           <div className="text-center">
-            <Fuel size={18} className="mx-auto mb-1 text-titan-gold" />
+            <Fuel size={18} className="mx-auto mb-1 text-titan-red" />
             <p className="text-xs text-muted-foreground">{car.fuelType}</p>
           </div>
           <div className="text-center">
-            <Calendar size={18} className="mx-auto mb-1 text-titan-gold" />
+            <Calendar size={18} className="mx-auto mb-1 text-titan-red" />
             <p className="text-xs text-muted-foreground">{car.type}</p>
           </div>
         </div>
@@ -123,7 +123,7 @@ const CarCard = ({ car, onViewDetails, index }: CarCardProps) => {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs text-muted-foreground">Starting from</p>
-            <p className="text-2xl font-display font-bold text-gradient-gold">
+            <p className="text-2xl font-display font-bold text-gradient-red">
               {formatPrice(car.price)}
             </p>
           </div>

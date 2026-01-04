@@ -31,8 +31,8 @@ const FinancingCalculator = ({ carPrice = 500000 }: FinancingCalculatorProps) =>
   return (
     <div className="p-6 rounded-2xl bg-card border border-border/50">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-titan-gold/10 flex items-center justify-center">
-          <Calculator className="w-6 h-6 text-titan-gold" />
+        <div className="w-12 h-12 rounded-xl bg-titan-red/10 flex items-center justify-center">
+          <Calculator className="w-6 h-6 text-titan-red" />
         </div>
         <div>
           <h3 className="font-display text-xl font-semibold text-foreground">Financing Calculator</h3>
@@ -48,7 +48,7 @@ const FinancingCalculator = ({ carPrice = 500000 }: FinancingCalculatorProps) =>
               <DollarSign className="w-4 h-4" />
               Vehicle Price
             </label>
-            <span className="text-titan-gold font-semibold">{formatCurrency(price)}</span>
+            <span className="text-titan-red font-semibold">{formatCurrency(price)}</span>
           </div>
           <Slider
             value={[price]}
@@ -56,7 +56,7 @@ const FinancingCalculator = ({ carPrice = 500000 }: FinancingCalculatorProps) =>
             min={100000}
             max={2000000}
             step={10000}
-            className="[&_[role=slider]]:bg-titan-gold"
+            className="[&_[role=slider]]:bg-titan-red"
           />
         </div>
 
@@ -67,7 +67,7 @@ const FinancingCalculator = ({ carPrice = 500000 }: FinancingCalculatorProps) =>
               <Percent className="w-4 h-4" />
               Down Payment
             </label>
-            <span className="text-titan-gold font-semibold">{downPayment}% ({formatCurrency(downPaymentAmount)})</span>
+            <span className="text-titan-red font-semibold">{downPayment}% ({formatCurrency(downPaymentAmount)})</span>
           </div>
           <Slider
             value={[downPayment]}
@@ -75,7 +75,7 @@ const FinancingCalculator = ({ carPrice = 500000 }: FinancingCalculatorProps) =>
             min={10}
             max={50}
             step={5}
-            className="[&_[role=slider]]:bg-titan-gold"
+            className="[&_[role=slider]]:bg-titan-red"
           />
         </div>
 
@@ -86,7 +86,7 @@ const FinancingCalculator = ({ carPrice = 500000 }: FinancingCalculatorProps) =>
               <Calendar className="w-4 h-4" />
               Loan Term
             </label>
-            <span className="text-titan-gold font-semibold">{loanTerm} months</span>
+            <span className="text-titan-red font-semibold">{loanTerm} months</span>
           </div>
           <Slider
             value={[loanTerm]}
@@ -94,7 +94,7 @@ const FinancingCalculator = ({ carPrice = 500000 }: FinancingCalculatorProps) =>
             min={12}
             max={84}
             step={12}
-            className="[&_[role=slider]]:bg-titan-gold"
+            className="[&_[role=slider]]:bg-titan-red"
           />
         </div>
 
@@ -105,7 +105,7 @@ const FinancingCalculator = ({ carPrice = 500000 }: FinancingCalculatorProps) =>
               <Percent className="w-4 h-4" />
               Interest Rate
             </label>
-            <span className="text-titan-gold font-semibold">{interestRate}%</span>
+            <span className="text-titan-red font-semibold">{interestRate}%</span>
           </div>
           <Slider
             value={[interestRate]}
@@ -113,15 +113,15 @@ const FinancingCalculator = ({ carPrice = 500000 }: FinancingCalculatorProps) =>
             min={2}
             max={10}
             step={0.5}
-            className="[&_[role=slider]]:bg-titan-gold"
+            className="[&_[role=slider]]:bg-titan-red"
           />
         </div>
 
         {/* Results */}
         <div className="pt-6 border-t border-border/50 space-y-4">
-          <div className="p-4 rounded-xl bg-titan-gold/10 text-center">
+          <div className="p-4 rounded-xl bg-titan-red/10 text-center">
             <p className="text-sm text-muted-foreground mb-1">Estimated Monthly Payment</p>
-            <p className="font-display text-3xl font-bold text-titan-gold">
+            <p className="font-display text-3xl font-bold text-titan-red">
               {formatCurrency(monthlyPayment)}
             </p>
           </div>

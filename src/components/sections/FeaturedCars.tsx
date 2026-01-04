@@ -88,9 +88,9 @@ const FeaturedCars = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
-            <p className="text-titan-gold font-medium mb-2">VIRTUAL SHOWROOM</p>
+            <p className="text-titan-red font-medium mb-2">VIRTUAL SHOWROOM</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Featured <span className="text-gradient-gold">Collection</span>
+              Featured <span className="text-gradient-red">Collection</span>
             </h2>
           </div>
 
@@ -102,8 +102,8 @@ const FeaturedCars = () => {
                 onClick={() => setActiveCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeCategory === category
-                    ? 'bg-titan-gold text-titan-dark'
-                    : 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-titan-gold/50'
+                    ? 'bg-titan-red text-white'
+                    : 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-titan-red/50'
                 }`}
               >
                 {category}
@@ -117,7 +117,7 @@ const FeaturedCars = () => {
           {filteredCars.map((car, index) => (
             <div
               key={car.id}
-              className="group relative bg-card rounded-xl overflow-hidden border border-border/50 hover:border-titan-gold/50 transition-all duration-500 hover:shadow-xl hover:shadow-titan-gold/10"
+              className="group relative bg-card rounded-xl overflow-hidden border border-border/50 hover:border-titan-red/50 transition-all duration-500 hover:shadow-xl hover:shadow-titan-red/10"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Image */}
@@ -131,7 +131,7 @@ const FeaturedCars = () => {
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-titan-gold/90 text-titan-dark">
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-titan-red/90 text-white">
                     {car.category}
                   </span>
                 </div>
@@ -139,21 +139,21 @@ const FeaturedCars = () => {
 
               {/* Content */}
               <div className="p-6">
-                <p className="text-sm text-titan-gold font-medium mb-1">{car.brand}</p>
+                <p className="text-sm text-titan-red font-medium mb-1">{car.brand}</p>
                 <h3 className="font-display text-xl font-bold text-foreground mb-2">{car.name}</h3>
                 
                 {/* Specs */}
                 <div className="flex gap-4 mb-4 text-xs text-muted-foreground">
                   <div className="flex items-center gap-1">
-                    <Fuel size={14} className="text-titan-gold" />
+                    <Fuel size={14} className="text-titan-red" />
                     <span>{car.specs.engine}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Gauge size={14} className="text-titan-gold" />
+                    <Gauge size={14} className="text-titan-red" />
                     <span>{car.specs.power}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Settings size={14} className="text-titan-gold" />
+                    <Settings size={14} className="text-titan-red" />
                     <span>{car.specs.transmission}</span>
                   </div>
                 </div>
@@ -162,7 +162,7 @@ const FeaturedCars = () => {
                 <div className="flex items-center justify-between pt-4 border-t border-border/50">
                   <div>
                     <p className="text-xs text-muted-foreground">Starting from</p>
-                    <p className="font-display text-xl font-bold text-gradient-gold">{car.price}</p>
+                    <p className="font-display text-xl font-bold text-gradient-red">{car.price}</p>
                   </div>
                   <Button variant="titanOutline" size="sm" className="group/btn">
                     View Details

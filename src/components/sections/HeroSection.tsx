@@ -23,24 +23,24 @@ const HeroSection = () => {
 
       {/* Animated lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-titan-gold/30 to-transparent animate-pulse" />
-        <div className="absolute top-2/3 right-0 w-1/4 h-px bg-gradient-to-l from-transparent via-titan-gold/20 to-transparent animate-pulse delay-500" />
-        <div className="absolute bottom-1/3 left-1/4 w-px h-1/4 bg-gradient-to-b from-transparent via-titan-gold/20 to-transparent animate-pulse delay-700" />
+        <div className="absolute top-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-titan-red/30 to-transparent animate-pulse" />
+        <div className="absolute top-2/3 right-0 w-1/4 h-px bg-gradient-to-l from-transparent via-titan-red/20 to-transparent animate-pulse delay-500" />
+        <div className="absolute bottom-1/3 left-1/4 w-px h-1/4 bg-gradient-to-b from-transparent via-titan-red/20 to-transparent animate-pulse delay-700" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
         <div className="max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-titan-gold/30 bg-titan-gold/10 backdrop-blur-sm mb-8 animate-fade-up opacity-0" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
-            <span className="w-2 h-2 rounded-full bg-titan-gold animate-pulse" />
-            <span className="text-sm font-medium text-titan-gold">Dubai's Premium Auto Dealership</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-titan-red/30 bg-titan-red/10 backdrop-blur-sm mb-8 animate-fade-up opacity-0" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
+            <span className="w-2 h-2 rounded-full bg-titan-red animate-pulse" />
+            <span className="text-sm font-medium text-titan-red">Dubai's Premium Auto Dealership</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight animate-fade-up opacity-0" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
             <span className="block">CRAFTED BY</span>
-            <span className="text-gradient-gold block">TITANS</span>
+            <span className="text-gradient-red block">TITANS</span>
           </h1>
 
           {/* Subheading */}
@@ -67,15 +67,15 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border/30 animate-fade-up opacity-0" style={{ animationDelay: '1200ms', animationFillMode: 'forwards' }}>
             <div>
-              <p className="font-display text-3xl md:text-4xl font-bold text-gradient-gold">500+</p>
+              <p className="font-display text-3xl md:text-4xl font-bold text-gradient-red">500+</p>
               <p className="text-sm text-muted-foreground mt-1">Cars Delivered</p>
             </div>
             <div>
-              <p className="font-display text-3xl md:text-4xl font-bold text-gradient-gold">50+</p>
+              <p className="font-display text-3xl md:text-4xl font-bold text-gradient-red">50+</p>
               <p className="text-sm text-muted-foreground mt-1">Countries Served</p>
             </div>
             <div>
-              <p className="font-display text-3xl md:text-4xl font-bold text-gradient-gold">100%</p>
+              <p className="font-display text-3xl md:text-4xl font-bold text-gradient-red">100%</p>
               <p className="text-sm text-muted-foreground mt-1">Satisfaction</p>
             </div>
           </div>
@@ -85,7 +85,7 @@ const HeroSection = () => {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float">
         <span className="text-sm text-muted-foreground">Scroll to explore</span>
-        <ChevronDown className="text-titan-gold animate-bounce" size={24} />
+        <ChevronDown className="text-titan-red animate-bounce" size={24} />
       </div>
     </section>
   );

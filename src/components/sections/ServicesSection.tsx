@@ -37,14 +37,14 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-24 bg-gradient-to-b from-card via-background to-card">
       {/* Decorative top line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-titan-gold/30 to-transparent mb-24" />
+      <div className="h-px bg-gradient-to-r from-transparent via-titan-red/30 to-transparent mb-24" />
 
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-titan-gold font-medium mb-2">OUR SERVICES</p>
+          <p className="text-titan-red font-medium mb-2">OUR SERVICES</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Complete <span className="text-gradient-gold">End-to-End</span> Service
+            Complete <span className="text-gradient-red">End-to-End</span> Service
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             From the moment you choose your vehicle until it's safely delivered to your location, 
@@ -57,18 +57,18 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group relative p-8 rounded-xl bg-background/50 border border-border/30 hover:border-titan-gold/30 transition-all duration-500"
+              className="group relative p-8 rounded-xl bg-background/50 border border-border/30 hover:border-titan-red/30 transition-all duration-500"
             >
               {/* Icon with glow */}
               <div className="relative mb-6 inline-block">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-titan-gold/20 to-transparent flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                  <service.icon className="w-8 h-8 text-titan-gold" />
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-titan-red/20 to-transparent flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                  <service.icon className="w-8 h-8 text-titan-red" />
                 </div>
-                <div className="absolute inset-0 bg-titan-gold/30 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-titan-red/30 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               {/* Content */}
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-titan-gold transition-colors">
+              <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-titan-red transition-colors">
                 {service.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -77,7 +77,7 @@ const ServicesSection = () => {
 
               {/* Corner accent */}
               <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden rounded-tr-xl">
-                <div className="absolute top-0 right-0 w-32 h-1 bg-gradient-to-l from-titan-gold/50 to-transparent transform rotate-45 translate-x-8 -translate-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 right-0 w-32 h-1 bg-gradient-to-l from-titan-red/50 to-transparent transform rotate-45 translate-x-8 -translate-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             </div>
           ))}
@@ -86,12 +86,12 @@ const ServicesSection = () => {
         {/* Process Timeline */}
         <div className="mt-24">
           <h3 className="font-display text-2xl font-bold text-center text-foreground mb-12">
-            Your Journey With <span className="text-gradient-gold">Titan Auto</span>
+            Your Journey With <span className="text-gradient-red">Titan Auto</span>
           </h3>
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-titan-gold/30 to-transparent" />
+            <div className="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-titan-red/30 to-transparent" />
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {[
@@ -102,7 +102,7 @@ const ServicesSection = () => {
                 { step: '05', title: 'Enjoy', desc: 'Drive your new car' },
               ].map((item, index) => (
                 <div key={item.step} className="relative text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-card border-2 border-titan-gold/50 flex items-center justify-center font-display text-lg font-bold text-titan-gold relative z-10">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-card border-2 border-titan-red/50 flex items-center justify-center font-display text-lg font-bold text-titan-red relative z-10">
                     {item.step}
                   </div>
                   <h4 className="font-display text-lg font-semibold text-foreground mb-1">{item.title}</h4>

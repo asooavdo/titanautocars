@@ -85,7 +85,7 @@ const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 z-50 bg-background/80 backdrop-blur-sm p-2 rounded-full hover:bg-titan-gold hover:text-titan-dark transition-all duration-300"
+          className="absolute right-4 top-4 z-50 bg-background/80 backdrop-blur-sm p-2 rounded-full hover:bg-titan-red hover:text-white transition-all duration-300"
         >
           <X size={20} />
         </button>
@@ -101,13 +101,13 @@ const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
           {/* Navigation Arrows */}
           <button
             onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm p-3 rounded-full hover:bg-titan-gold hover:text-titan-dark transition-all duration-300"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm p-3 rounded-full hover:bg-titan-red hover:text-white transition-all duration-300"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm p-3 rounded-full hover:bg-titan-gold hover:text-titan-dark transition-all duration-300"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm p-3 rounded-full hover:bg-titan-red hover:text-white transition-all duration-300"
           >
             <ChevronRight size={24} />
           </button>
@@ -116,7 +116,7 @@ const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
           <button
             onClick={handle360View}
             disabled={isRotating}
-            className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 hover:bg-titan-gold hover:text-titan-dark transition-all duration-300"
+            className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 hover:bg-titan-red hover:text-white transition-all duration-300"
           >
             <RotateCcw size={18} className={isRotating ? 'animate-spin' : ''} />
             <span className="text-sm font-medium">360° View</span>
@@ -130,7 +130,7 @@ const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
                 onClick={() => setCurrentImageIndex(idx)}
                 className={`w-16 h-12 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                   idx === currentImageIndex 
-                    ? 'border-titan-gold scale-105' 
+                    ? 'border-titan-red scale-105' 
                     : 'border-transparent opacity-70 hover:opacity-100'
                 }`}
               >
@@ -146,11 +146,11 @@ const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <Badge className="bg-titan-gold text-titan-dark">{car.year}</Badge>
+                <Badge className="bg-titan-red text-white">{car.year}</Badge>
                 <Badge variant="outline" className="border-foreground/20">0 KM</Badge>
                 <Badge variant="outline" className="border-foreground/20">{car.type}</Badge>
               </div>
-              <p className="text-sm text-titan-gold font-medium uppercase tracking-wider mb-1">
+              <p className="text-sm text-titan-red font-medium uppercase tracking-wider mb-1">
                 {car.brand}
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold">
@@ -159,7 +159,7 @@ const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
             </div>
             <div className="text-left md:text-right">
               <p className="text-sm text-muted-foreground">Starting from</p>
-              <p className="text-3xl md:text-4xl font-display font-bold text-gradient-gold">
+              <p className="text-3xl md:text-4xl font-display font-bold text-gradient-red">
                 {formatPrice(car.price)}
               </p>
             </div>
@@ -173,16 +173,16 @@ const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
           {/* Specifications Grid */}
           <div>
             <h3 className="font-display text-xl font-semibold mb-4 flex items-center gap-2">
-              <Settings className="text-titan-gold" size={20} />
+              <Settings className="text-titan-red" size={20} />
               Specifications
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {specs.map((spec, idx) => (
                 <div 
                   key={idx}
-                  className="bg-secondary/50 border border-border rounded-lg p-4 hover:border-titan-gold/50 transition-colors"
+                  className="bg-secondary/50 border border-border rounded-lg p-4 hover:border-titan-red/50 transition-colors"
                 >
-                  <spec.icon className="text-titan-gold mb-2" size={20} />
+                  <spec.icon className="text-titan-red mb-2" size={20} />
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
                     {spec.label}
                   </p>
@@ -195,7 +195,7 @@ const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
           {/* Features */}
           <div>
             <h3 className="font-display text-xl font-semibold mb-4 flex items-center gap-2">
-              <Check className="text-titan-gold" size={20} />
+              <Check className="text-titan-red" size={20} />
               Features & Equipment
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -204,7 +204,7 @@ const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
                   key={idx}
                   className="flex items-center gap-3 bg-secondary/30 rounded-lg px-4 py-3"
                 >
-                  <Check className="text-titan-gold shrink-0" size={16} />
+                  <Check className="text-titan-red shrink-0" size={16} />
                   <span>{feature}</span>
                 </div>
               ))}
