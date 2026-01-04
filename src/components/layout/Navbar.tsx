@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import titanLogo from '@/assets/titan-logo.jpg';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,19 +19,38 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Showroom', href: '#showroom' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/', isRoute: true },
+    { name: 'Showroom', href: '/showroom', isRoute: true },
+    { name: 'Services', href: '#services', isRoute: false },
+    { name: 'About', href: '#about', isRoute: false },
+    { name: 'Contact', href: '#contact', isRoute: false },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (link: { href: string; isRoute: boolean }) => {
+    if (link.isRoute) {
+      navigate(link.href);
+    } else {
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.querySelector(link.href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.querySelector(link.href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     }
     setIsMobileMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -65,21 +87,23 @@ const Navbar = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#hero" onClick={() => scrollToSection('#hero')} className="flex items-center">
+            <button onClick={handleLogoClick} className="flex items-center">
               <img 
                 src={titanLogo} 
                 alt="Titan Auto" 
                 className="h-14 w-auto"
               />
-            </a>
+            </button>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className="relative text-foreground/80 hover:text-titan-gold font-medium transition-colors duration-300 group"
+                  onClick={() => handleNavClick(link)}
+                  className={`relative text-foreground/80 hover:text-titan-gold font-medium transition-colors duration-300 group ${
+                    link.isRoute && location.pathname === link.href ? 'text-titan-gold' : ''
+                  }`}
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-titan-gold to-titan-gold-light group-hover:w-full transition-all duration-300" />
@@ -89,7 +113,7 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Button variant="titan" onClick={() => scrollToSection('#contact')}>
+              <Button variant="titan" onClick={() => handleNavClick({ href: '#contact', isRoute: false })}>
                 Get a Quote
               </Button>
             </div>
@@ -115,13 +139,15 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-left text-lg text-foreground/80 hover:text-titan-gold font-medium transition-colors py-2 border-b border-border/30"
+                  onClick={() => handleNavClick(link)}
+                  className={`text-left text-lg text-foreground/80 hover:text-titan-gold font-medium transition-colors py-2 border-b border-border/30 ${
+                    link.isRoute && location.pathname === link.href ? 'text-titan-gold' : ''
+                  }`}
                 >
                   {link.name}
                 </button>
               ))}
-              <Button variant="titan" className="mt-4" onClick={() => scrollToSection('#contact')}>
+              <Button variant="titan" className="mt-4" onClick={() => handleNavClick({ href: '#contact', isRoute: false })}>
                 Get a Quote
               </Button>
             </div>
