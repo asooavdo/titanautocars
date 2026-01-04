@@ -5,6 +5,7 @@ import FloatingButtons from '@/components/FloatingButtons';
 import ShowroomFilters from '@/components/showroom/ShowroomFilters';
 import CarGrid from '@/components/showroom/CarGrid';
 import CarDetailsModal from '@/components/showroom/CarDetailsModal';
+import FinancingCalculator from '@/components/showroom/FinancingCalculator';
 import { Car } from '@/types/car';
 
 const carsData: Car[] = [
@@ -248,6 +249,42 @@ const VirtualShowroom = () => {
 
       {/* Car Grid */}
       <CarGrid cars={filteredCars} onViewDetails={handleViewDetails} />
+
+      {/* Financing Calculator */}
+      <section className="py-16 bg-card/50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+                Flexible <span className="text-gradient-gold">Financing</span>
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Make your dream car a reality with our competitive financing options. 
+                Use our calculator to estimate your monthly payments.
+              </p>
+              <ul className="space-y-3 text-sm text-foreground/80">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-titan-gold" />
+                  Competitive interest rates from 2% APR
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-titan-gold" />
+                  Flexible loan terms up to 84 months
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-titan-gold" />
+                  Quick approval within 24 hours
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-titan-gold" />
+                  No hidden fees or charges
+                </li>
+              </ul>
+            </div>
+            <FinancingCalculator />
+          </div>
+        </div>
+      </section>
 
       {/* Car Details Modal */}
       <CarDetailsModal 
