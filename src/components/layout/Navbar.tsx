@@ -21,7 +21,8 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '/', isRoute: true },
     { name: 'Showroom', href: '/showroom', isRoute: true },
-    { name: 'Services', href: '#services', isRoute: false },
+    { name: 'How to Buy', href: '/purchase-process', isRoute: true },
+    { name: 'Shipping', href: '/shipping', isRoute: true },
     { name: 'About', href: '#about', isRoute: false },
     { name: 'Contact', href: '#contact', isRoute: false },
   ];
