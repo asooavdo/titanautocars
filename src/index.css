@@ -24,24 +24,24 @@
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 37 38% 61%;
-    --accent-foreground: 0 0% 6%;
+    --accent: 351 93% 42%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 37 38% 61%;
+    --ring: 351 93% 42%;
 
     --radius: 0.5rem;
 
-    /* Custom Titan colors */
+    /* Custom Titan colors - Red Theme */
     --titan-black: 0 0% 10%;
     --titan-dark: 0 0% 6%;
-    --titan-gold: 37 38% 61%;
-    --titan-gold-light: 37 45% 70%;
-    --titan-red: 0 72% 51%;
+    --titan-red: 351 93% 42%;
+    --titan-red-light: 351 80% 55%;
+    --titan-red-dark: 351 93% 35%;
     --titan-gradient-start: 0 0% 6%;
     --titan-gradient-end: 0 0% 11%;
 
@@ -52,12 +52,12 @@
 
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 37 38% 61%;
-    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-primary: 351 93% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 15%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 37 38% 61%;
+    --sidebar-ring: 351 93% 42%;
   }
 
   .dark {
@@ -73,13 +73,13 @@
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
-    --accent: 37 38% 61%;
-    --accent-foreground: 0 0% 6%;
+    --accent: 351 93% 42%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 37 38% 61%;
+    --ring: 351 93% 42%;
   }
 }
 
@@ -119,29 +119,29 @@
     background: linear-gradient(135deg, hsl(var(--titan-gradient-start)) 0%, hsl(var(--titan-gradient-end)) 100%);
   }
 
-  .gradient-gold {
-    background: linear-gradient(135deg, hsl(var(--titan-gold)) 0%, hsl(var(--titan-gold-light)) 100%);
+  .gradient-red {
+    background: linear-gradient(135deg, hsl(var(--titan-red)) 0%, hsl(var(--titan-red-light)) 100%);
   }
 
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(var(--titan-gold)) 0%, hsl(var(--titan-gold-light)) 100%);
+  .text-gradient-red {
+    background: linear-gradient(135deg, hsl(var(--titan-red)) 0%, hsl(var(--titan-red-light)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .border-gradient-gold {
+  .border-gradient-red {
     border: 1px solid transparent;
     background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
-                linear-gradient(135deg, hsl(var(--titan-gold)) 0%, hsl(var(--titan-gold-light)) 100%) border-box;
-  }
-
-  .glow-gold {
-    box-shadow: 0 0 20px hsl(var(--titan-gold) / 0.3),
-                0 0 40px hsl(var(--titan-gold) / 0.1);
+                linear-gradient(135deg, hsl(var(--titan-red)) 0%, hsl(var(--titan-red-light)) 100%) border-box;
   }
 
   .glow-red {
+    box-shadow: 0 0 20px hsl(var(--titan-red) / 0.3),
+                0 0 40px hsl(var(--titan-red) / 0.1);
+  }
+
+  .glow-red-intense {
     box-shadow: 0 0 30px hsl(var(--titan-red) / 0.4);
   }
 
@@ -149,9 +149,9 @@
     background: linear-gradient(
       105deg,
       transparent 40%,
-      hsl(var(--titan-gold) / 0.1) 45%,
-      hsl(var(--titan-gold) / 0.2) 50%,
-      hsl(var(--titan-gold) / 0.1) 55%,
+      hsl(var(--titan-red) / 0.1) 45%,
+      hsl(var(--titan-red) / 0.2) 50%,
+      hsl(var(--titan-red) / 0.1) 55%,
       transparent 60%
     );
     background-size: 200% 100%;
@@ -169,7 +169,7 @@
     left: 0;
     width: 60px;
     height: 2px;
-    background: linear-gradient(90deg, hsl(var(--titan-gold)), transparent);
+    background: linear-gradient(90deg, hsl(var(--titan-red)), transparent);
   }
 }
 
@@ -281,10 +281,10 @@
 
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--titan-gold) / 0.3);
+    box-shadow: 0 0 20px hsl(var(--titan-red) / 0.3);
   }
   50% {
-    box-shadow: 0 0 40px hsl(var(--titan-gold) / 0.5);
+    box-shadow: 0 0 40px hsl(var(--titan-red) / 0.5);
   }
 }
 
@@ -316,10 +316,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--titan-gold) / 0.5);
+  background: hsl(var(--titan-red) / 0.5);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--titan-gold) / 0.7);
+  background: hsl(var(--titan-red) / 0.7);
 }

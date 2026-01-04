@@ -50,54 +50,48 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         {/* Company Story */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Left Content */}
           <div>
-            <p className="text-titan-gold font-medium mb-2">ABOUT US</p>
+            <p className="text-titan-red font-medium mb-2">ABOUT US</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Your Trusted Partner in <span className="text-gradient-gold">Luxury Automotive</span>
+              Your Trusted Partner in <span className="text-gradient-red">Luxury Automotive</span>
             </h2>
             
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Located in the heart of Dubai Auto Zone, Titan Auto has established itself as 
-              the premier destination for discerning clients seeking the world's finest automobiles. 
-              Our commitment to excellence and customer satisfaction sets us apart in the luxury 
-              automotive market.
+              the premier destination for discerning clients seeking the world's finest automobiles.
             </p>
 
             <p className="text-muted-foreground mb-8 leading-relaxed">
               We specialize in sourcing and delivering brand-new vehicles from prestigious 
-              manufacturers, ensuring each client receives nothing but the best. Our international 
-              shipping expertise means we can deliver your dream car anywhere in the world.
+              manufacturers, ensuring each client receives nothing but the best.
             </p>
 
-            {/* Highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {highlights.map((item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-titan-gold flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-titan-red flex-shrink-0" />
                   <span className="text-sm text-foreground/80">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Content - Stats */}
           <div className="space-y-8">
             <div className="grid grid-cols-2 gap-4">
               <div className="p-6 rounded-xl bg-card border border-border/50 text-center">
-                <p className="font-display text-4xl font-bold text-gradient-gold mb-2">10+</p>
+                <p className="font-display text-4xl font-bold text-gradient-red mb-2">10+</p>
                 <p className="text-sm text-muted-foreground">Years Experience</p>
               </div>
               <div className="p-6 rounded-xl bg-card border border-border/50 text-center">
-                <p className="font-display text-4xl font-bold text-gradient-gold mb-2">500+</p>
+                <p className="font-display text-4xl font-bold text-gradient-red mb-2">500+</p>
                 <p className="text-sm text-muted-foreground">Cars Delivered</p>
               </div>
               <div className="p-6 rounded-xl bg-card border border-border/50 text-center">
-                <p className="font-display text-4xl font-bold text-gradient-gold mb-2">50+</p>
+                <p className="font-display text-4xl font-bold text-gradient-red mb-2">50+</p>
                 <p className="text-sm text-muted-foreground">Countries Served</p>
               </div>
               <div className="p-6 rounded-xl bg-card border border-border/50 text-center">
-                <p className="font-display text-4xl font-bold text-gradient-gold mb-2">4.9</p>
+                <p className="font-display text-4xl font-bold text-gradient-red mb-2">4.9</p>
                 <p className="text-sm text-muted-foreground">Customer Rating</p>
               </div>
             </div>
@@ -107,19 +101,19 @@ const AboutSection = () => {
         {/* Partner Brands */}
         <div className="mb-20">
           <div className="text-center mb-10">
-            <p className="text-titan-gold font-medium mb-2">OUR PARTNERS</p>
+            <p className="text-titan-red font-medium mb-2">OUR PARTNERS</p>
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">
-              Premium <span className="text-gradient-gold">Brands</span> We Represent
+              Premium <span className="text-gradient-red">Brands</span> We Represent
             </h3>
           </div>
           <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
             {partnerBrands.map((brand) => (
               <div 
                 key={brand.name}
-                className="aspect-square rounded-xl bg-card border border-border/50 flex items-center justify-center hover:border-titan-gold/50 hover:bg-titan-gold/5 transition-all duration-300 group cursor-pointer"
+                className="aspect-square rounded-xl bg-card border border-border/50 flex items-center justify-center hover:border-titan-red/50 hover:bg-titan-red/5 transition-all duration-300 group cursor-pointer"
                 title={brand.name}
               >
-                <span className="font-display text-xl font-bold text-muted-foreground group-hover:text-titan-gold transition-colors">
+                <span className="font-display text-xl font-bold text-muted-foreground group-hover:text-titan-red transition-colors">
                   {brand.logo}
                 </span>
               </div>
@@ -127,18 +121,18 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Testimonials from Google Maps */}
+        {/* Testimonials */}
         <div>
           <div className="text-center mb-10">
-            <p className="text-titan-gold font-medium mb-2">TESTIMONIALS</p>
+            <p className="text-titan-red font-medium mb-2">TESTIMONIALS</p>
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-              What Our <span className="text-gradient-gold">Clients</span> Say
+              What Our <span className="text-gradient-red">Clients</span> Say
             </h3>
             <a 
               href="https://maps.google.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-titan-gold transition-colors"
+              className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-titan-red transition-colors"
             >
               View all reviews on Google Maps
               <ExternalLink className="w-3 h-3" />
@@ -149,12 +143,12 @@ const AboutSection = () => {
             {testimonials.map((testimonial) => (
               <div 
                 key={testimonial.name}
-                className="p-6 rounded-xl bg-card border border-border/50 hover:border-titan-gold/30 transition-colors duration-300"
+                className="p-6 rounded-xl bg-card border border-border/50 hover:border-titan-red/30 transition-colors duration-300"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-titan-gold text-titan-gold" />
+                      <Star key={i} className="w-4 h-4 fill-titan-red text-titan-red" />
                     ))}
                   </div>
                   <span className="text-xs text-muted-foreground bg-background px-2 py-1 rounded-full">
@@ -164,7 +158,7 @@ const AboutSection = () => {
                 <p className="text-sm text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
                 <div className="flex items-center justify-between">
                   <span className="font-medium text-foreground text-sm">{testimonial.name}</span>
-                  <span className="text-xs text-titan-gold">{testimonial.location}</span>
+                  <span className="text-xs text-titan-red">{testimonial.location}</span>
                 </div>
               </div>
             ))}

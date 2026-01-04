@@ -34,7 +34,7 @@ const ShowroomFilters = ({
     <section className="sticky top-20 md:top-[7.5rem] z-30 bg-background/95 backdrop-blur-md border-y border-border py-6">
       <div className="container mx-auto px-4">
         <div className="flex items-center gap-3 mb-4">
-          <SlidersHorizontal className="text-titan-gold" size={20} />
+          <SlidersHorizontal className="text-titan-red" size={20} />
           <h2 className="font-display font-semibold text-lg">Filter Vehicles</h2>
         </div>
 
@@ -78,7 +78,7 @@ const ShowroomFilters = ({
           {/* Price Range Filter */}
           <div className="space-y-3">
             <label className="text-sm text-muted-foreground font-medium">
-              Price Range: <span className="text-titan-gold">AED {formatPrice(priceRange[0])} - AED {formatPrice(priceRange[1])}</span>
+              Price Range: <span className="text-titan-red">AED {formatPrice(priceRange[0])} - AED {formatPrice(priceRange[1])}</span>
             </label>
             <Slider
               value={priceRange}

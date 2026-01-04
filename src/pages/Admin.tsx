@@ -204,7 +204,7 @@ const Admin = () => {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-                Admin <span className="text-gradient-gold">Panel</span>
+                Admin <span className="text-gradient-red">Panel</span>
               </h1>
               <p className="text-muted-foreground">Manage your vehicle inventory</p>
             </div>

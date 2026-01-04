@@ -36,7 +36,7 @@ const Footer = () => {
                 href="https://instagram.com/titanautodubai" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-card/50 flex items-center justify-center text-muted-foreground hover:text-titan-gold hover:bg-titan-gold/10 transition-colors"
+                className="w-10 h-10 rounded-lg bg-card/50 flex items-center justify-center text-muted-foreground hover:text-titan-red hover:bg-titan-red/10 transition-colors"
               >
                 <Instagram size={18} />
               </a>
@@ -44,7 +44,7 @@ const Footer = () => {
                 href="https://facebook.com/titanautodubai" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-card/50 flex items-center justify-center text-muted-foreground hover:text-titan-gold hover:bg-titan-gold/10 transition-colors"
+                className="w-10 h-10 rounded-lg bg-card/50 flex items-center justify-center text-muted-foreground hover:text-titan-red hover:bg-titan-red/10 transition-colors"
               >
                 <Facebook size={18} />
               </a>
@@ -52,7 +52,7 @@ const Footer = () => {
                 href="https://youtube.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-card/50 flex items-center justify-center text-muted-foreground hover:text-titan-gold hover:bg-titan-gold/10 transition-colors"
+                className="w-10 h-10 rounded-lg bg-card/50 flex items-center justify-center text-muted-foreground hover:text-titan-red hover:bg-titan-red/10 transition-colors"
               >
                 <Youtube size={18} />
               </a>
@@ -67,7 +67,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a 
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-titan-gold transition-colors"
+                    className="text-sm text-muted-foreground hover:text-titan-red transition-colors"
                   >
                     {link.name}
                   </a>
@@ -93,26 +93,26 @@ const Footer = () => {
             <h4 className="font-display font-semibold text-foreground mb-6">Contact Us</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-titan-gold flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-titan-red flex-shrink-0 mt-0.5" />
                 <div className="text-sm text-muted-foreground">
                   <p>Showroom 228, Dubai Auto Zone</p>
                   <p>Ras Al Khor, Dubai, UAE</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone size={18} className="text-titan-gold" />
+                <Phone size={18} className="text-titan-red" />
                 <a 
                   href="tel:+971527939125" 
-                  className="text-sm text-muted-foreground hover:text-titan-gold transition-colors"
+                  className="text-sm text-muted-foreground hover:text-titan-red transition-colors"
                 >
                   +971 52 793 9125
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={18} className="text-titan-gold" />
+                <Mail size={18} className="text-titan-red" />
                 <a 
                   href="mailto:info@ttn-dxb.com" 
-                  className="text-sm text-muted-foreground hover:text-titan-gold transition-colors"
+                  className="text-sm text-muted-foreground hover:text-titan-red transition-colors"
                 >
                   info@ttn-dxb.com
                 </a>
@@ -128,10 +128,10 @@ const Footer = () => {
               © {currentYear} Titan Auto FZE. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-titan-gold transition-colors">
+              <a href="#" className="text-sm text-muted-foreground hover:text-titan-red transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-titan-gold transition-colors">
+              <a href="#" className="text-sm text-muted-foreground hover:text-titan-red transition-colors">
                 Terms of Service
               </a>
             </div>

@@ -107,17 +107,17 @@ const Shipping = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 gradient-titan relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-titan-gold/20 rounded-full" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-titan-gold/30 rounded-full" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-titan-gold/40 rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-titan-red/20 rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-titan-red/30 rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-titan-red/40 rounded-full" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center animate-fade-up">
-            <div className="w-20 h-20 rounded-2xl bg-titan-gold/10 flex items-center justify-center mx-auto mb-6">
-              <Globe className="w-10 h-10 text-titan-gold" />
+            <div className="w-20 h-20 rounded-2xl bg-titan-red/10 flex items-center justify-center mx-auto mb-6">
+              <Globe className="w-10 h-10 text-titan-red" />
             </div>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-              International <span className="text-gradient-gold">Shipping</span>
+              International <span className="text-gradient-red">Shipping</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               We deliver luxury vehicles to over 50 countries worldwide. 
@@ -132,7 +132,7 @@ const Shipping = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Delivery <span className="text-gradient-gold">Destinations</span>
+              Delivery <span className="text-gradient-red">Destinations</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Click on a region to see available countries and estimated delivery times.
@@ -144,11 +144,11 @@ const Shipping = () => {
               <div key={region.name} className="rounded-2xl bg-card border border-border/50 overflow-hidden">
                 <button
                   onClick={() => setExpandedRegion(expandedRegion === region.name ? null : region.name)}
-                  className="w-full p-6 flex items-center justify-between hover:bg-titan-gold/5 transition-colors"
+                  className="w-full p-6 flex items-center justify-between hover:bg-titan-red/5 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-titan-gold/10 flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-titan-gold" />
+                    <div className="w-12 h-12 rounded-xl bg-titan-red/10 flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-titan-red" />
                     </div>
                     <div className="text-left">
                       <h3 className="font-semibold text-foreground">{region.name}</h3>
@@ -169,7 +169,7 @@ const Shipping = () => {
                         <Clock className="w-4 h-4" />
                         {region.deliveryTime}
                       </div>
-                      <div className="flex items-center gap-1 text-titan-gold">
+                      <div className="flex items-center gap-1 text-titan-red">
                         <Ship className="w-4 h-4" />
                         From {formatCurrency(region.startingPrice)}
                       </div>
@@ -197,11 +197,11 @@ const Shipping = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <div className="w-16 h-16 rounded-2xl bg-titan-gold/10 flex items-center justify-center mx-auto mb-4">
-                <Calculator className="w-8 h-8 text-titan-gold" />
+              <div className="w-16 h-16 rounded-2xl bg-titan-red/10 flex items-center justify-center mx-auto mb-4">
+                <Calculator className="w-8 h-8 text-titan-red" />
               </div>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Shipping <span className="text-gradient-gold">Calculator</span>
+                Shipping <span className="text-gradient-red">Calculator</span>
               </h2>
               <p className="text-muted-foreground">
                 Get an instant estimate for shipping your vehicle.
@@ -232,7 +232,7 @@ const Shipping = () => {
                     type="number"
                     value={vehicleValue}
                     onChange={(e) => setVehicleValue(Number(e.target.value))}
-                    className="w-full px-4 py-3 rounded-lg bg-card border border-border/50 text-foreground focus:border-titan-gold focus:outline-none"
+                    className="w-full px-4 py-3 rounded-lg bg-card border border-border/50 text-foreground focus:border-titan-red focus:outline-none"
                     placeholder="Enter vehicle value"
                   />
                 </div>
@@ -249,12 +249,12 @@ const Shipping = () => {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Estimated Delivery</span>
-                      <span className="font-semibold text-titan-gold">{selectedShipping.time}</span>
+                      <span className="font-semibold text-titan-red">{selectedShipping.time}</span>
                     </div>
-                    <div className="p-4 rounded-xl bg-titan-gold/10">
+                    <div className="p-4 rounded-xl bg-titan-red/10">
                       <div className="flex justify-between items-center">
                         <span className="font-medium text-foreground">Estimated Total</span>
-                        <span className="font-display text-2xl font-bold text-titan-gold">
+                        <span className="font-display text-2xl font-bold text-titan-red">
                           {formatCurrency(estimatedTotal)}
                         </span>
                       </div>
@@ -281,7 +281,7 @@ const Shipping = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Customs & <span className="text-gradient-gold">Documentation</span>
+              Customs & <span className="text-gradient-red">Documentation</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We handle all the paperwork so you can focus on enjoying your new vehicle.
@@ -292,10 +292,10 @@ const Shipping = () => {
             {customsInfo.map((item) => (
               <div 
                 key={item.title}
-                className="p-6 rounded-2xl bg-card border border-border/50 hover:border-titan-gold/30 transition-colors"
+                className="p-6 rounded-2xl bg-card border border-border/50 hover:border-titan-red/30 transition-colors"
               >
-                <div className="w-14 h-14 rounded-xl bg-titan-gold/10 flex items-center justify-center mb-4">
-                  <item.icon className="w-7 h-7 text-titan-gold" />
+                <div className="w-14 h-14 rounded-xl bg-titan-red/10 flex items-center justify-center mb-4">
+                  <item.icon className="w-7 h-7 text-titan-red" />
                 </div>
                 <h3 className="font-semibold text-foreground text-lg mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>

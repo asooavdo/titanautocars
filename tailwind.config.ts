@@ -50,9 +50,9 @@ export default {
         titan: {
           black: "hsl(var(--titan-black))",
           dark: "hsl(var(--titan-dark))",
-          gold: "hsl(var(--titan-gold))",
-          "gold-light": "hsl(var(--titan-gold-light))",
           red: "hsl(var(--titan-red))",
+          "red-light": "hsl(var(--titan-red-light))",
+          "red-dark": "hsl(var(--titan-red-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -89,8 +89,8 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--titan-gold) / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(var(--titan-gold) / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--titan-red) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--titan-red) / 0.6)" },
         },
       },
       animation: {
@@ -102,7 +102,7 @@ export default {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "titan-gradient": "linear-gradient(135deg, hsl(var(--titan-gradient-start)) 0%, hsl(var(--titan-gradient-end)) 100%)",
-        "gold-gradient": "linear-gradient(135deg, hsl(var(--titan-gold)) 0%, hsl(var(--titan-gold-light)) 100%)",
+        "red-gradient": "linear-gradient(135deg, hsl(var(--titan-red)) 0%, hsl(var(--titan-red-light)) 100%)",
       },
     },
   },

@@ -88,7 +88,7 @@ const PurchaseProcess = () => {
         <div className="container mx-auto px-4">
           <div className="text-center animate-fade-up">
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-              Purchase <span className="text-gradient-gold">Process</span>
+              Purchase <span className="text-gradient-red">Process</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               From selection to delivery, we make owning your dream car a seamless experience. 
@@ -106,7 +106,7 @@ const PurchaseProcess = () => {
             {/* Progress Line */}
             <div className="hidden md:block absolute top-8 left-0 right-0 h-1 bg-border/50">
               <div 
-                className="h-full bg-gradient-to-r from-titan-gold to-titan-gold-light transition-all duration-500"
+                className="h-full bg-gradient-to-r from-titan-red to-titan-red-light transition-all duration-500"
                 style={{ width: `${((activeStep - 1) / (steps.length - 1)) * 100}%` }}
               />
             </div>
@@ -122,8 +122,8 @@ const PurchaseProcess = () => {
                   <div 
                     className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${
                       step.id <= activeStep 
-                        ? 'bg-titan-gold text-titan-dark shadow-lg shadow-titan-gold/30' 
-                        : 'bg-card border border-border/50 text-muted-foreground group-hover:border-titan-gold/50'
+                        ? 'bg-titan-red text-white shadow-lg shadow-titan-red/30' 
+                        : 'bg-card border border-border/50 text-muted-foreground group-hover:border-titan-red/50'
                     }`}
                   >
                     {step.id < activeStep ? (
@@ -133,7 +133,7 @@ const PurchaseProcess = () => {
                     )}
                   </div>
                   <p className={`mt-3 text-sm font-medium text-center transition-colors ${
-                    step.id === activeStep ? 'text-titan-gold' : 'text-muted-foreground'
+                    step.id === activeStep ? 'text-titan-red' : 'text-muted-foreground'
                   }`}>
                     {step.title}
                   </p>
@@ -153,15 +153,15 @@ const PurchaseProcess = () => {
               >
                 <div className="p-8 rounded-2xl bg-card border border-border/50">
                   <div className="flex items-start gap-6 mb-8">
-                    <div className="w-20 h-20 rounded-2xl bg-titan-gold/10 flex items-center justify-center flex-shrink-0">
-                      <step.icon className="w-10 h-10 text-titan-gold" />
+                    <div className="w-20 h-20 rounded-2xl bg-titan-red/10 flex items-center justify-center flex-shrink-0">
+                      <step.icon className="w-10 h-10 text-titan-red" />
                     </div>
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-titan-gold font-display text-lg font-semibold">
+                        <span className="text-titan-red font-display text-lg font-semibold">
                           Step {step.id}
                         </span>
-                        <span className="px-3 py-1 rounded-full bg-titan-gold/10 text-titan-gold text-xs flex items-center gap-1">
+                        <span className="px-3 py-1 rounded-full bg-titan-red/10 text-titan-red text-xs flex items-center gap-1">
                           <Clock className="w-3 h-3" />
                           {step.duration}
                         </span>
@@ -179,7 +179,7 @@ const PurchaseProcess = () => {
                         key={index}
                         className="flex items-center gap-3 p-4 rounded-xl bg-background/50"
                       >
-                        <CheckCircle2 className="w-5 h-5 text-titan-gold flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-titan-red flex-shrink-0" />
                         <span className="text-sm text-foreground/80">{detail}</span>
                       </div>
                     ))}
@@ -221,8 +221,8 @@ const PurchaseProcess = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border/50">
-              <div className="w-14 h-14 rounded-xl bg-titan-gold/10 flex items-center justify-center">
-                <Shield className="w-7 h-7 text-titan-gold" />
+              <div className="w-14 h-14 rounded-xl bg-titan-red/10 flex items-center justify-center">
+                <Shield className="w-7 h-7 text-titan-red" />
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">Secure Transactions</h3>
@@ -230,8 +230,8 @@ const PurchaseProcess = () => {
               </div>
             </div>
             <div className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border/50">
-              <div className="w-14 h-14 rounded-xl bg-titan-gold/10 flex items-center justify-center">
-                <Headphones className="w-7 h-7 text-titan-gold" />
+              <div className="w-14 h-14 rounded-xl bg-titan-red/10 flex items-center justify-center">
+                <Headphones className="w-7 h-7 text-titan-red" />
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">24/7 Support</h3>
@@ -239,8 +239,8 @@ const PurchaseProcess = () => {
               </div>
             </div>
             <div className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border/50">
-              <div className="w-14 h-14 rounded-xl bg-titan-gold/10 flex items-center justify-center">
-                <FileCheck className="w-7 h-7 text-titan-gold" />
+              <div className="w-14 h-14 rounded-xl bg-titan-red/10 flex items-center justify-center">
+                <FileCheck className="w-7 h-7 text-titan-red" />
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">Full Documentation</h3>

@@ -49,14 +49,14 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-card via-background to-card">
       {/* Decorative top line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-titan-gold/30 to-transparent mb-24" />
+      <div className="h-px bg-gradient-to-r from-transparent via-titan-red/30 to-transparent mb-24" />
 
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-titan-gold font-medium mb-2">GET IN TOUCH</p>
+          <p className="text-titan-red font-medium mb-2">GET IN TOUCH</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Start Your <span className="text-gradient-gold">Journey</span> Today
+            Start Your <span className="text-gradient-red">Journey</span> Today
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Ready to own your dream car? Contact our team for personalized assistance 
@@ -80,7 +80,7 @@ const ContactSection = () => {
                     placeholder="Your name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-background border-border/50 focus:border-titan-gold"
+                    className="bg-background border-border/50 focus:border-titan-red"
                     required
                   />
                 </div>
@@ -91,7 +91,7 @@ const ContactSection = () => {
                     placeholder="your@email.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-background border-border/50 focus:border-titan-gold"
+                    className="bg-background border-border/50 focus:border-titan-red"
                     required
                   />
                 </div>
@@ -104,7 +104,7 @@ const ContactSection = () => {
                   placeholder="+971 XX XXX XXXX"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="bg-background border-border/50 focus:border-titan-gold"
+                  className="bg-background border-border/50 focus:border-titan-red"
                 />
               </div>
 
@@ -114,7 +114,7 @@ const ContactSection = () => {
                   placeholder="Tell us about your dream car..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-background border-border/50 focus:border-titan-gold min-h-[120px]"
+                  className="bg-background border-border/50 focus:border-titan-red min-h-[120px]"
                   required
                 />
               </div>
@@ -131,10 +131,10 @@ const ContactSection = () => {
             {contactInfo.map((info) => (
               <div 
                 key={info.title}
-                className="flex gap-4 p-5 rounded-xl bg-card/50 border border-border/30 hover:border-titan-gold/30 transition-colors duration-300"
+                className="flex gap-4 p-5 rounded-xl bg-card/50 border border-border/30 hover:border-titan-red/30 transition-colors duration-300"
               >
-                <div className="w-12 h-12 rounded-lg bg-titan-gold/10 flex items-center justify-center flex-shrink-0">
-                  <info.icon className="w-6 h-6 text-titan-gold" />
+                <div className="w-12 h-12 rounded-lg bg-titan-red/10 flex items-center justify-center flex-shrink-0">
+                  <info.icon className="w-6 h-6 text-titan-red" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">{info.title}</h4>
@@ -153,17 +153,17 @@ const ContactSection = () => {
                   href="https://instagram.com/titanautodubai" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-lg bg-titan-gold/10 flex items-center justify-center hover:bg-titan-gold hover:text-titan-dark transition-all duration-300"
+                  className="w-12 h-12 rounded-lg bg-titan-red/10 flex items-center justify-center hover:bg-titan-red hover:text-white transition-all duration-300"
                 >
-                  <Instagram size={22} className="text-titan-gold hover:text-titan-dark" />
+                  <Instagram size={22} className="text-titan-red hover:text-white" />
                 </a>
                 <a 
                   href="https://facebook.com/titanautodubai" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-lg bg-titan-gold/10 flex items-center justify-center hover:bg-titan-gold hover:text-titan-dark transition-all duration-300"
+                  className="w-12 h-12 rounded-lg bg-titan-red/10 flex items-center justify-center hover:bg-titan-red hover:text-white transition-all duration-300"
                 >
-                  <Facebook size={22} className="text-titan-gold hover:text-titan-dark" />
+                  <Facebook size={22} className="text-titan-red hover:text-white" />
                 </a>
               </div>
             </div>

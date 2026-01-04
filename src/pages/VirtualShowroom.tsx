@@ -218,7 +218,7 @@ const VirtualShowroom = () => {
         <div className="container mx-auto px-4">
           <div className="text-center animate-fade-up">
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-              Virtual <span className="text-gradient-gold">Showroom</span>
+              Virtual <span className="text-gradient-red">Showroom</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Explore our exclusive collection of zero-kilometer luxury vehicles. 
@@ -243,7 +243,7 @@ const VirtualShowroom = () => {
       {/* Results Count */}
       <div className="container mx-auto px-4 py-4">
         <p className="text-muted-foreground">
-          Showing <span className="text-titan-gold font-semibold">{filteredCars.length}</span> vehicles
+          Showing <span className="text-titan-red font-semibold">{filteredCars.length}</span> vehicles
         </p>
       </div>
 
@@ -256,7 +256,7 @@ const VirtualShowroom = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                Flexible <span className="text-gradient-gold">Financing</span>
+                Flexible <span className="text-gradient-red">Financing</span>
               </h2>
               <p className="text-muted-foreground mb-6">
                 Make your dream car a reality with our competitive financing options. 
@@ -264,19 +264,19 @@ const VirtualShowroom = () => {
               </p>
               <ul className="space-y-3 text-sm text-foreground/80">
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-titan-gold" />
+                  <span className="w-2 h-2 rounded-full bg-titan-red" />
                   Competitive interest rates from 2% APR
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-titan-gold" />
+                  <span className="w-2 h-2 rounded-full bg-titan-red" />
                   Flexible loan terms up to 84 months
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-titan-gold" />
+                  <span className="w-2 h-2 rounded-full bg-titan-red" />
                   Quick approval within 24 hours
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-titan-gold" />
+                  <span className="w-2 h-2 rounded-full bg-titan-red" />
                   No hidden fees or charges
                 </li>
               </ul>
