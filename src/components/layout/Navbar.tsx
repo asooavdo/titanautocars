@@ -3,13 +3,11 @@ import { Menu, X, Phone, Mail } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import titanLogo from '@/assets/titan-logo.jpg';
-
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -17,17 +15,35 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: 'Home', href: '/', isRoute: true },
-    { name: 'Showroom', href: '/showroom', isRoute: true },
-    { name: 'How to Buy', href: '/purchase-process', isRoute: true },
-    { name: 'Shipping', href: '/shipping', isRoute: true },
-    { name: 'About', href: '#about', isRoute: false },
-    { name: 'Contact', href: '#contact', isRoute: false },
-  ];
-
-  const handleNavClick = (link: { href: string; isRoute: boolean }) => {
+  const navLinks = [{
+    name: 'Home',
+    href: '/',
+    isRoute: true
+  }, {
+    name: 'Showroom',
+    href: '/showroom',
+    isRoute: true
+  }, {
+    name: 'How to Buy',
+    href: '/purchase-process',
+    isRoute: true
+  }, {
+    name: 'Shipping',
+    href: '/shipping',
+    isRoute: true
+  }, {
+    name: 'About',
+    href: '#about',
+    isRoute: false
+  }, {
+    name: 'Contact',
+    href: '#contact',
+    isRoute: false
+  }];
+  const handleNavClick = (link: {
+    href: string;
+    isRoute: boolean;
+  }) => {
     if (link.isRoute) {
       navigate(link.href);
     } else {
@@ -36,26 +52,30 @@ const Navbar = () => {
         setTimeout(() => {
           const element = document.querySelector(link.href);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({
+              behavior: 'smooth'
+            });
           }
         }, 100);
       } else {
         const element = document.querySelector(link.href);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({
+            behavior: 'smooth'
+          });
         }
       }
     }
     setIsMobileMenuOpen(false);
   };
-
   const handleLogoClick = () => {
     navigate('/');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <>
+  return <>
       {/* Top bar */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-titan-dark/95 backdrop-blur-md border-b border-border/50">
         <div className="container mx-auto px-4">
@@ -78,85 +98,56 @@ const Navbar = () => {
       </div>
 
       {/* Main navbar */}
-      <nav 
-        className={`fixed left-0 right-0 z-40 transition-all duration-500 ${
-          isScrolled 
-            ? 'top-0 md:top-10 bg-background/95 backdrop-blur-md shadow-lg shadow-titan-dark/50' 
-            : 'top-0 md:top-10 bg-transparent'
-        }`}
-      >
+      <nav className={`fixed left-0 right-0 z-40 transition-all duration-500 ${isScrolled ? 'top-0 md:top-10 bg-background/95 backdrop-blur-md shadow-lg shadow-titan-dark/50' : 'top-0 md:top-10 bg-transparent'}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <button onClick={handleLogoClick} className="flex items-center">
-              <img 
-                src={titanLogo} 
-                alt="Titan Auto" 
-                className="h-14 w-auto"
-              />
+              <img src={titanLogo} alt="Titan Auto" className="h-14 w-auto rounded-full shadow-none" />
             </button>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => handleNavClick(link)}
-                  className={`relative text-foreground/80 hover:text-titan-gold font-medium transition-colors duration-300 group ${
-                    link.isRoute && location.pathname === link.href ? 'text-titan-gold' : ''
-                  }`}
-                >
+              {navLinks.map(link => <button key={link.name} onClick={() => handleNavClick(link)} className={`relative text-foreground/80 hover:text-titan-gold font-medium transition-colors duration-300 group ${link.isRoute && location.pathname === link.href ? 'text-titan-gold' : ''}`}>
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-titan-gold to-titan-gold-light group-hover:w-full transition-all duration-300" />
-                </button>
-              ))}
+                </button>)}
             </div>
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Button variant="titan" onClick={() => handleNavClick({ href: '#contact', isRoute: false })}>
+              <Button variant="titan" onClick={() => handleNavClick({
+              href: '#contact',
+              isRoute: false
+            })}>
                 Get a Quote
               </Button>
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 text-foreground hover:text-titan-gold transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
+            <button className="lg:hidden p-2 text-foreground hover:text-titan-gold transition-colors" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        <div 
-          className={`lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border transition-all duration-300 ${
-            isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-          }`}
-        >
+        <div className={`lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => handleNavClick(link)}
-                  className={`text-left text-lg text-foreground/80 hover:text-titan-gold font-medium transition-colors py-2 border-b border-border/30 ${
-                    link.isRoute && location.pathname === link.href ? 'text-titan-gold' : ''
-                  }`}
-                >
+              {navLinks.map(link => <button key={link.name} onClick={() => handleNavClick(link)} className={`text-left text-lg text-foreground/80 hover:text-titan-gold font-medium transition-colors py-2 border-b border-border/30 ${link.isRoute && location.pathname === link.href ? 'text-titan-gold' : ''}`}>
                   {link.name}
-                </button>
-              ))}
-              <Button variant="titan" className="mt-4" onClick={() => handleNavClick({ href: '#contact', isRoute: false })}>
+                </button>)}
+              <Button variant="titan" className="mt-4" onClick={() => handleNavClick({
+              href: '#contact',
+              isRoute: false
+            })}>
                 Get a Quote
               </Button>
             </div>
           </div>
         </div>
       </nav>
-    </>
-  );
+    </>;
 };
-
 export default Navbar;
